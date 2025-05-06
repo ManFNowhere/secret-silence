@@ -1,0 +1,27 @@
+@import 'tailwindcss';
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --color-theme:#000000;
+    --color-primary: #008000;
+    --color-secondary: #0000ff;
+    --color-button: #008000;
+    --color-button-hover: #006400;
+    --color-button-secondary: #0000ff;
+    --color-secondary-hover: #0000cc;
+    --color-windows: #00A3EE;
+    --color-windows-hover: #0aa9f2;
+    --color-mac: #ffffff;
+    --color-mac-hover: #f0f0f0;
+}
+
+.z-negative {
+    z-index: -1;
+}
