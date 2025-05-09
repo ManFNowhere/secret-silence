@@ -30,25 +30,28 @@
     {{-- Hero Section --}}
     <div class="flex flex-row bg-black p-10 items-start rounded my-auto">
         <div class="flex flex-row items-center gap-12 max-w-7xl px-6">
-            {{-- Album Cover --}}
-            <div class="w-1/2">
-                <img src="{{ asset('storage/' . $songs[0]->cover_image) }}" alt="{{ $songs[0]->title }}" class="rounded-lg shadow-2xl w-full h-auto object-cover">
-            </div>
+        
+            @if (isset($songs[0]))
+                {{-- Album Cover --}}
+                <div class="w-1/2">
+                    <img src="{{ asset('storage/' . $songs[0]->cover_image) }}" alt="{{ $songs[0]->title }}" class="rounded-lg shadow-2xl w-full h-auto object-cover">
+                </div>
 
-            {{-- Text Content --}}
-            <div class="w-1/2 text-white">
-                <h1 class="text-8xl font-extrabold leading-tight">
-                    Secret <span class="text-primary">Silence</span>
-                </h1>
-                <p class="text-lg text-gray-300 mt-6 mb-8">
-                    {{ $songs[0]->description ?? 'An emotional journey through sound and silence.' }}
-                </p>
-                <button
-                    id="listen-button"
-                    class="inline-block bg-white text-black hover:text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-primary transition">
-                    🎧 Listen Now
-                </button>
-            </div>
+                {{-- Text Content --}}
+                <div class="w-1/2 text-white">
+                    <h1 class="text-8xl font-extrabold leading-tight">
+                        Secret <span class="text-primary">Silence</span>
+                    </h1>
+                    <p class="text-lg text-gray-300 mt-6 mb-8">
+                        {{ $songs[0]->description ?? 'An emotional journey through sound and silence.' }}
+                    </p>
+                    <button
+                        id="listen-button"
+                        class="inline-block bg-white text-black hover:text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-primary transition">
+                        🎧 Listen Now
+                    </button>
+                </div>
+            @endif
         </div>
     </div>
 

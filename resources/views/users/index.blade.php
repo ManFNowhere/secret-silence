@@ -60,13 +60,13 @@
                 {{-- Spotify URL --}}
                 <div class="flex flex-col">
                     <label class="block text-sm font-medium">Spotify Link</label>
-                    <input type="url" name="spotify" value="{{ old('spotify') }}" placeholder="https://open.spotify.com/..." class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block p-2.5">
+                    <input type="url" name="spotify" value="{{ old('spotify') }}" placeholder="https://open.spotify.com/..." class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block p-2.5" required>
                 </div>
 
                 {{-- Apple Music URL --}}
                 <div class="flex flex-col">
                     <label class="block text-sm font-medium">Apple Music Link</label>
-                    <input type="url" name="apple_music" value="{{ old(key: 'apple_music') }}" placeholder="https://music.apple.com/..." class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block  p-2.5">
+                    <input type="url" name="apple_music" value="{{ old(key: 'apple_music') }}" placeholder="https://music.apple.com/..." class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary focus:border-primary block  p-2.5" required>
                 </div>
 
                 <div class="flex justify-end gap-2 pt-2">
