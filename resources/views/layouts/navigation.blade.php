@@ -15,7 +15,7 @@
                     <a href="{{ route('released.index') }}" class="block py-2 px-3 {{ request()->routeIs('released.*') ? 'text-primary' : 'text-white' }} rounded-sm hover:text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0">Released</a>
                 </li>
                 <li>
-                    <a href="{{ route('tools.index') }}" class="block py-2 px-3 {{ request()->routeIs('tools.*') ? 'text-primary' : 'text-white' }} rounded-sm hover:text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0">Tools</a>
+                    <a href="{{ route('software.index') }}" class="block py-2 px-3 {{ request()->routeIs('software.*') ? 'text-primary' : 'text-white' }} rounded-sm hover:text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0">Software</a>
                 </li>
                 <li>
                     <a href="{{ route('about') }}" class="block py-2 px-3 {{ request()->routeIs('about') ? 'text-primary' : 'text-white' }} rounded-sm hover:text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0">About</a>

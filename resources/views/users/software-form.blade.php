@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Secret Silence - Tools-Form')
+@section('title', 'Secret Silence - Software-Form')
 
 @section('content')
     <x-status />
 
-    <form action="{{ route('tools-form-post', ['textObject' => $data]) }}" method="POST" enctype="multipart/form-data" class="w-2/3 flex flex-col bg-white items-center rounded p-4 mx-auto">
+    <form action="{{ route('software-form-post', ['textObject' => $data]) }}" method="POST" enctype="multipart/form-data" class="w-2/3 flex flex-col bg-white items-center rounded p-4 mx-auto">
         @csrf
-        <h1 class="font-bold text-xl">Form Tools</h1>
+        <h1 class="font-bold text-xl">Form Software</h1>
 
 
 

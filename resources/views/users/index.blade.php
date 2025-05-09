@@ -7,7 +7,7 @@
     <x-status />
 
     <div class="flex flex-col md:flex-row w-1/2 mx-auto justify-around text-center">
-        <a href="{{ route('tools-form') }}" class="bg-primary hover:bg-button-hover p-2 text-white rounded-sm my-4" >Edit Tools Page</a>
+        <a href="{{ route('software-form') }}" class="bg-primary hover:bg-button-hover p-2 text-white rounded-sm my-4" >Edit Software Page</a>
         <a href="{{ route('about-form') }}" class="bg-primary hover:bg-button-hover p-2 text-white rounded-sm my-4" >Edit About Page</a>
     </div>
 

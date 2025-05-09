@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Software;
 use App\Models\Sosmed;
 use App\Models\TextObject;
-use App\Models\Tool;
 use Illuminate\Http\Request;
 
-class ToolsController extends Controller
+class SoftwareController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,14 +14,14 @@ class ToolsController extends Controller
     public function index()
     {
         $data = TextObject::where('type', 2)->first();
-        $tools = Tool::all();
-        $actualWin = Tool::where('platform', 'Windows')->latest()->get()->first();
-        $actualMac = Tool::where('platform', 'Mac')->latest()->get()->first();
+        $Softwares = Software::all();
+        $actualWin = Software::where('platform', 'Windows')->latest()->get()->first();
+        $actualMac = Software::where('platform', 'Mac')->latest()->get()->first();
         $sosmed = Sosmed::where('type', 2)->get();
         // dd(vars: $sosmed);
-        return view('tools', [
+        return view('software', [
             'data' => $data,
-            'tools' => $tools,
+            'Softwares' => $Softwares,
             'actualWin' => $actualWin,
             'actualMac' => $actualMac,
             'sosmeds' => $sosmed,
@@ -77,9 +76,9 @@ class ToolsController extends Controller
         //
     }
 
-    public function download(Tool $tool)
+    public function download(Software $Software)
     {
-        dd($tool);
-        return response()->download(public_path($tool->file));
+        dd($Software);
+        return response()->download(public_path($Software->file));
     }
 }

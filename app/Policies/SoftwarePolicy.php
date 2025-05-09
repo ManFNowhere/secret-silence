@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Tool;
+use App\Models\Software;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
-class ToolPolicy
+class SoftwarePolicy
 {
     /**
      * Determine whether the user can view any models.
@@ -19,7 +19,7 @@ class ToolPolicy
     /**
      * Determine whether the user can view the model.
      */
-    public function view(User $user, Tool $tool): bool
+    public function view(User $user, Software $software): bool
     {
         return false;
     }
@@ -35,7 +35,7 @@ class ToolPolicy
     /**
      * Determine whether the user can update the model.
      */
-    public function update(User $user, Tool $tool): bool
+    public function update(User $user, Software $software): bool
     {
         return false;
     }
@@ -43,7 +43,7 @@ class ToolPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Tool $tool): bool
+    public function delete(User $user, Software $software): bool
     {
         return false;
     }
@@ -51,7 +51,7 @@ class ToolPolicy
     /**
      * Determine whether the user can restore the model.
      */
-    public function restore(User $user, Tool $tool): bool
+    public function restore(User $user, Software $software): bool
     {
         return false;
     }
@@ -59,7 +59,7 @@ class ToolPolicy
     /**
      * Determine whether the user can permanently delete the model.
      */
-    public function forceDelete(User $user, Tool $tool): bool
+    public function forceDelete(User $user, Software $software): bool
     {
         return false;
     }

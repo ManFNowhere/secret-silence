@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Secret Silence - Tools-Form')
+@section('title', 'Secret Silence - Software-Form')
 
 @section('content')
     <x-status />

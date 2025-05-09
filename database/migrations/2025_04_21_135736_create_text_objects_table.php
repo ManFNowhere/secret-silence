@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tools', function (Blueprint $table) {
+        Schema::create('text_objects', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('name');
-            $table->string('version');
-            $table->string('path');
-            $table->string('platform');
+            $table->tinyInteger('type')->default(0);
+            $table->string('title');
+            $table->text('description');
+            $table->string('image');
+
         });
     }
 
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tools');
+        Schema::dropIfExists('text_objects');
     }
 };

@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Software;
 use App\Models\Sosmed;
 use App\Models\TextObject;
 use App\Models\User;
-use App\Models\Tool;
 use App\Models\Songs;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
@@ -112,7 +112,7 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', 'About form submitted successfully.');
     }
 
-    public function toolsForm()
+    public function softwareForm()
     {
         $data = TextObject::where('type', 2)->first();
         if (!$data) {
@@ -123,10 +123,10 @@ class UserController extends Controller
             $data->image = '';
             $data->save();
         }
-        return view('users.tools-form', ['data' => $data]);
+        return view('users.software-form', ['data' => $data]);
     }
 
-    public function toolsFormPost(Request $request, TextObject $textObject)
+    public function softwareFormPost(Request $request, TextObject $textObject)
     {
         // dd($request->file('mac'));
         $data = $request->validate([
@@ -157,10 +157,10 @@ class UserController extends Controller
             $fileWindows = $request->file('windows');
             $filenameWindows = 'windows-' . $versionWindows . '.' . $fileWindows->getClientOriginalExtension();
 
-            $windowsPath = $fileWindows->storeAs('tools/windows', $filenameWindows, 'public');
+            $windowsPath = $fileWindows->storeAs('software/windows', $filenameWindows, 'public');
 
-            Tool::create([
-                'name' => 'tools-windows',
+            Software::create([
+                'name' => 'software-windows',
                 'platform' => 'windows',
                 'version' => $versionWindows,
                 'path' => $windowsPath,
@@ -173,10 +173,10 @@ class UserController extends Controller
             $fileMac = $request->file('mac');
             $filenameMac = 'mac-' . $versionMac . '.' . $fileMac->getClientOriginalExtension();
 
-            $macPath = $fileMac->storeAs('tools/mac', $filenameMac, 'public');
+            $macPath = $fileMac->storeAs('software/mac', $filenameMac, 'public');
 
-            Tool::create([
-                'name' => 'tools-mac',
+            Software::create([
+                'name' => 'software-mac',
                 'platform' => 'mac',
                 'version' => $versionMac,
                 'path' => $macPath,
@@ -184,7 +184,7 @@ class UserController extends Controller
         }
 
 
-        return redirect()->route('users.index')->with('success', 'Form berhasil disimpan dan tools diperbarui.');
+        return redirect()->route('users.index')->with('success', 'Form berhasil disimpan dan software diperbarui.');
     }
 
 
