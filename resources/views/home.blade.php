@@ -8,18 +8,14 @@
         <div class="bg-white rounded-2xl p-8 w-full max-w-lg shadow-2xl relative">
             <h2 class="text-2xl font-extrabold text-gray-800 mb-6 text-center">Listen on Your Favorite Platform</h2>
             <div class="grid grid-cols-2 gap-4">
-                <a href="#" class="flex items-center justify-center gap-2 py-3 px-4 bg-green-500 text-white rounded-lg hover:bg-green-400 transition font-semibold shadow">
+                @if (isset($songs[0]))
+                <a href="{{ $song[0]->spotify }}" class="flex items-center justify-center gap-2 py-3 px-4 bg-green-500 text-white rounded-lg hover:bg-green-400 transition font-semibold shadow">
                     <i class="fa-brands fa-spotify text-xl"></i> Spotify
                 </a>
-                <a href="#" class="flex items-center justify-center gap-2 py-3 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-400 transition font-semibold shadow">
+                <a href="{{ $song[0]->apple_music }}" class="flex items-center justify-center gap-2 py-3 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-400 transition font-semibold shadow">
                     <i class="fa-brands fa-apple text-xl"></i> Apple Music
                 </a>
-                <a href="#" class="flex items-center justify-center gap-2 py-3 px-4 bg-red-500 text-white rounded-lg hover:bg-red-400 transition font-semibold shadow">
-                    <i class="fa-brands fa-youtube text-xl"></i> YouTube Music
-                </a>
-                <a href="#" class="flex items-center justify-center gap-2 py-3 px-4 bg-blue-700 text-white rounded-lg hover:bg-blue-600 transition font-semibold shadow">
-                    <i class="fa-brands fa-deezer text-xl"></i> Deezer
-                </a>
+                @endif
             </div>
             <button id="close-modal" class="mt-8 w-full bg-gray-800 text-white py-3 rounded-lg hover:bg-gray-700 transition font-bold">
                 Close
