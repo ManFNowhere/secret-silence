@@ -26,7 +26,7 @@
 
 {{-- modal card --}}
 <div id="{{ $modalId }}"
-    class="fixed inset-0 z-40 flex items-start md:items-center justify-center bg-black/50 overflow-y-auto pt-10 sm:pt-12 hidden">
+    class="fixed inset-0 z-40 flex items-start md:items-center justify-center bg-black/50 overflow-y-auto pt-10 sm:pt-12 ">
     <div class="bg-gray-900 w-full max-w-md md:max-w-4xl mx-4 md:mx-10 rounded-xl p-6 shadow-xl relative">
         <button id="{{ $closeId }}"
                 class="absolute top-2 right-6 text-2xl leading-none text-gray-100 hover:bg-red-400 cursor-pointer bg-red-500 px-2 rounded">
@@ -34,11 +34,11 @@
         </button>
 
         <div class="flex flex-col md:flex-row w-full">
-            <div class="flex flex-col justify-center items-center md:justify-start md:mr-4 mb-4 bg-gray-800 rounded p-4 mx-4 text-white mt-10">
+            <div class="flex flex-col w-1/3 justify-center items-center md:justify-start md:mr-4 mb-4 bg-gray-800 rounded p-4 mx-4 text-white mt-10">
                 <img
                     src="{{ $image }}"
                     alt="{{ $song->title }} cover"
-                    class="w-48 h-48 md:w-64 md:h-64 object-cover rounded-lg shadow-md cursor-pointer mb-2">
+                    class="w-fit object-cover rounded-lg shadow-md cursor-pointer mb-2">
 
                 <h2 class="text-xl md:text-2xl font-bold mb-2 text-center">{{ $song->title }}</h2>
                 <p class="text-sm text-gray-400 mb-4 text-center">
