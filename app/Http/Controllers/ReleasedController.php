@@ -12,7 +12,7 @@ class ReleasedController extends Controller
      */
     public function index()
     {
-        $songs = Songs::all();
+        $songs = Songs::all()->sortBy('release_date');
         return view('released', compact('songs'));
     }
 

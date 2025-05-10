@@ -9,10 +9,10 @@
             <h2 class="text-2xl font-extrabold text-gray-800 mb-6 text-center">Listen on Your Favorite Platform</h2>
             <div class="grid grid-cols-2 gap-4">
                 @if (isset($songs[0]))
-                <a href="{{ $song[0]->spotify }}" class="flex items-center justify-center gap-2 py-3 px-4 bg-green-500 text-white rounded-lg hover:bg-green-400 transition font-semibold shadow">
+                <a href="{{ $songs[0]->spotify }}" class="flex items-center justify-center gap-2 py-3 px-4 bg-green-500 text-white rounded-lg hover:bg-green-400 transition font-semibold shadow">
                     <i class="fa-brands fa-spotify text-xl"></i> Spotify
                 </a>
-                <a href="{{ $song[0]->apple_music }}" class="flex items-center justify-center gap-2 py-3 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-400 transition font-semibold shadow">
+                <a href="{{ $songs[0]->apple_music }}" class="flex items-center justify-center gap-2 py-3 px-4 bg-blue-500 text-white rounded-lg hover:bg-blue-400 transition font-semibold shadow">
                     <i class="fa-brands fa-apple text-xl"></i> Apple Music
                 </a>
                 @endif
