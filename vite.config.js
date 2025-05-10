@@ -13,9 +13,10 @@ export default defineConfig({
     server: {
         cors: {
             origin: [
-                'http://localhost:3000',      // Akses dari localhost
-                'https://localhost:3000',     // Akses dari localhost (https)
+                'http://localhost:3000',
+                'https://localhost:3000',
                 'https://secret-silence-main-zwyhwc.laravel.cloud', // Cloud origin
-            ],
-        },
+            ]
+        }
+    },
 });
