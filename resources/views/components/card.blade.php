@@ -26,7 +26,7 @@
 
 {{-- modal card --}}
 <div id="{{ $modalId }}"
-    class="fixed inset-0 z-40 flex items-start md:items-center justify-center bg-black/50 overflow-y-auto pt-10 sm:pt-12 ">
+    class="fixed inset-0 z-40 flex items-start md:items-center justify-center bg-black/50 overflow-y-auto pt-10 sm:pt-12 hidden">
     <div class="bg-gray-900 w-full max-w-md md:max-w-4xl mx-4 md:mx-10 rounded-xl p-6 shadow-xl relative">
         <button id="{{ $closeId }}"
                 class="absolute top-2 right-6 text-2xl leading-none text-gray-100 hover:bg-red-400 cursor-pointer bg-red-500 px-2 rounded">
