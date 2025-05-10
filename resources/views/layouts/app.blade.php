@@ -14,7 +14,7 @@
 
 <body class="antialiased">
     <main class="min-h-screen relative overflow-hidden bg-black">
-        <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-10 opacity-15">
+        <video autoplay muted loop playsinline preload="auto" class="absolute top-0 left-0 w-full h-full object-cover z-10 opacity-15">
             <source src="{{ asset('storage/videos/background.mp4') }}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
