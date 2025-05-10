@@ -11,6 +11,7 @@ export default defineConfig({
         tailwindcss(),
     ],
     server: {
+        host: 'localhost',
         cors: {
             origin: [
                 'http://localhost:3000',
