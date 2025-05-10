@@ -11,8 +11,10 @@ export default defineConfig({
         tailwindcss(),
     ],
     server: {
-        host: '0.0.0.0',    // Gunakan 0.0.0.0 untuk memungkinkan akses dari perangkat lain jika perlu
-        port: 5173,          // Pastikan port ini sesuai
-        https: false,        // Matikan HTTPS untuk pengembangan lokal
+        hmr: {
+            host: 'localhost',
+        },
+        host: true,
+        origin: 'https://secret-silence-main-zwyhwc.laravel.cloud',
     },
 });
