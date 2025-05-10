@@ -11,14 +11,8 @@ export default defineConfig({
         tailwindcss(),
     ],
     server: {
-        // Di production, sebaiknya tidak menggunakan host 127.0.0.1
-        // Jika perlu akses dari berbagai perangkat, bisa menggunakan '0.0.0.0'
-        // host: '0.0.0.0', // Atau kamu bisa menghapus ini jika tidak perlu akses khusus
-        port: 5173, // Sesuaikan port sesuai kebutuhan
-        https: true, // Sesuaikan apakah perlu HTTPS di server produksi
+        host: '0.0.0.0',    // Gunakan 0.0.0.0 untuk memungkinkan akses dari perangkat lain jika perlu
+        port: 5173,          // Pastikan port ini sesuai
+        https: false,        // Matikan HTTPS untuk pengembangan lokal
     },
-    build: {
-        outDir: 'public/build',  // Pastikan output build ditempatkan di folder yang sesuai
-        manifest: true,           // Agar manifest dibuat untuk produksi
-    }
 });
