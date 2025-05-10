@@ -11,6 +11,10 @@ export default defineConfig({
         tailwindcss(),
     ],
     server: {
-        host: '127.0.0.1', 
+        hmr: {
+            host: 'localhost',
+        },
+        host: true,
+        origin: 'https://secret-silence-main-zwyhwc.laravel.cloud',
     },
 });
