@@ -5,6 +5,7 @@
 @section('content')
     <div class="text-white flex flex-col justify-center mt-4">
         <div class="flex flex-col items-start justify-between gap-8">
+            @dump($data)
             @if (isset($data))
                 <h1 class="text-5xl font-bold mb-6">{{ $data->title }}</h1>
                 <div class="flex flex-col-reverse md:flex-row w-full">
