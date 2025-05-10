@@ -39,10 +39,9 @@
                     src="{{ $image }}"
                     alt="{{ $song->title }} cover"
                     class="w-fit object-cover rounded-lg shadow-md cursor-pointer mb-2">
-
                 <h2 class="text-xl md:text-2xl font-bold mb-2 text-center">{{ $song->title }}</h2>
                 <p class="text-sm text-gray-400 mb-4 text-center">
-                    {{ $song->artist }} &bull; {{ Carbon\Carbon::parse($song->release_date)->format('F j, Y') }}
+                    {{ $song->artist }} &bull; {{ Carbon\Carbon::parse($song->released_at)->format('F j, Y') }}
                 </p>
 
                 <span class="font-semibold text-lg">Save it now!</span>

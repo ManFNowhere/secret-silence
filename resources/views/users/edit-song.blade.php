@@ -70,7 +70,7 @@
 
                 {{-- Action Buttons --}}
                 <div class="flex justify-end gap-2 pt-2">
-                    <button type="button" id="btn-cancel" class="px-4 py-2 bg-gray-200 rounded-lg hover:bg-red-500 hover:text-white">
+                    <button type="button" id="btn-cancel" class="px-4 py-2 bg-gray-200 rounded-lg hover:bg-red-500 hover:text-white"  onclick="window.location.href='{{ route('users.index') }}">
                         Cancel
                     </button>
                     <button type="submit" class="px-4 py-2 bg-button text-white rounded-lg hover:bg-button-hover">

@@ -17,7 +17,7 @@ class SoftwareController extends Controller
         $Softwares = Software::all();
         $actualWin = Software::where('platform', 'Windows')->latest()->get()->first();
         $actualMac = Software::where('platform', 'Mac')->latest()->get()->first();
-        $sosmed = Sosmed::where('type', 2)->get();
+        $sosmed = Sosmed::where('type', operator: 2)->get();
         // dd(vars: $sosmed);
         return view('software', [
             'data' => $data,
@@ -78,7 +78,6 @@ class SoftwareController extends Controller
 
     public function download(Software $Software)
     {
-        dd($Software);
         return response()->download(public_path($Software->file));
     }
 }
