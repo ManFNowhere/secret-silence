@@ -11,6 +11,11 @@ export default defineConfig({
         tailwindcss(),
     ],
     server: {
-        host: '127.0.0.1', 
-    },
+        cors: {
+            origin: [
+                'http://localhost:3000',      // Akses dari localhost
+                'https://localhost:3000',     // Akses dari localhost (https)
+                'https://secret-silence-main-zwyhwc.laravel.cloud', // Cloud origin
+            ],
+        },
 });
