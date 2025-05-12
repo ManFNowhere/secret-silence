@@ -24,17 +24,17 @@
     </div>
 
     {{-- Hero Section --}}
-    <div class="flex flex-row bg-black p-10 items-start rounded my-auto">
-        <div class="flex flex-row items-center gap-12 max-w-7xl px-6">
+    <div class="flex flex-row bg-black md:p-10 items-start rounded my-auto">
+        <div class="flex flex-col md:flex-row items-center md:gap-12 max-w-7xl md:px-6">
         
             @if (isset($songs[0]))
                 {{-- Album Cover --}}
-                <div class="w-1/2">
+                <div class="md:w-1/2">
                     <img src="{{ asset('storage/' . $songs[0]->cover_image) }}" alt="{{ $songs[0]->title }}" class="rounded-lg shadow-2xl w-full h-auto object-cover">
                 </div>
 
                 {{-- Text Content --}}
-                <div class="w-1/2 text-white">
+                <div class="md:w-1/2 w-fit text-white flex flex-col items-start text-left">
                     <h1 class="text-8xl font-extrabold leading-tight">
                         Secret <span class="text-primary">Silence</span>
                     </h1>
