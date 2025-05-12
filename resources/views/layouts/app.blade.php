@@ -10,8 +10,8 @@
     {{--<title>{{ config('app.name', 'Laravel') }}</title>--}}
 
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-    @vite('resources/js/app.js', 'build')
-    @vite('resources/css/app.css', buildDirectory: 'build')
+    @vite(['resources/js/app.js', 'resources/css/app.css'], 'build')
+
 
 </head>
 
