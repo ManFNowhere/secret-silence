@@ -5,7 +5,6 @@
 @section('content')
     <div class="text-white flex flex-col justify-center mt-4">
         <div class="flex flex-col items-start justify-between gap-8">
-            @dump($data)
             @if (isset($data))
                 <h1 class="text-5xl font-bold mb-6">{{ $data->title }}</h1>
                 <div class="flex flex-col-reverse md:flex-row w-full">
@@ -13,8 +12,6 @@
                         <img src="{{ asset('storage/' . $data->image) }}" alt="{{ $data->title }}" class="rounded shadow-lg">
                         <div class="flex flex-col w-full">
                             <h2 class="text-xl font-bold mt-4">Available on</h2>
-                            @dump($actualWin)
-                            @dump($actualMac)
                             @if ($actualWin )
                                 <a href="{{ asset('storage/' . $actualWin->path) }}"
                                     class="bg-windows hover:bg-windows-hover text-white font-bold py-2 px-4 rounded mt-4"

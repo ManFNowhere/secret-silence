@@ -9,7 +9,10 @@
     <title>@yield('title', 'Secret Silence')</title>
     {{--<title>{{ config('app.name', 'Laravel') }}</title>--}}
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    @vite('resources/js/app.js', 'build')
+    @vite('resources/css/app.css', buildDirectory: 'build')
+
 </head>
 
 <body class="antialiased">
