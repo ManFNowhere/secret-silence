@@ -289,6 +289,10 @@ class UserController extends Controller
             $path = $request->file('cover_image')->store('public/covers');
             $song->cover_image = $path;
         }
+        dump($song->cover_image);
+        dump($request->file('cover_image'));
+        dump('public/covers');
+
 
         $song->save();
 
