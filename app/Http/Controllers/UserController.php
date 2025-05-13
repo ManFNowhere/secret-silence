@@ -240,6 +240,19 @@ class UserController extends Controller
 
         $coverPath = $request->file('cover_image')
         ->store('covers', 'public');
+
+        if ($coverPath) {
+            $file = $request->file('cover_image');
+            if ($file->isValid()) {
+                $path = $file->store('public/covers');
+                logger("✅ File berhasil di-upload ke: $path");
+            } else {
+                logger("❌ Upload error: " . $file->getErrorMessage());
+            }
+        } else {
+            logger("❌ Tidak ada file cover_image dikirim");
+        }
+        
         Songs::create([
             'title'        => $data['title'],
             'artist'       => $data['artist'],
@@ -279,19 +292,20 @@ class UserController extends Controller
         $song->spotify = $request->spotify;
         $song->apple_music = $request->apple_music;
 
-        // Handle cover image if uploaded
         if ($request->hasFile('cover_image')) {
-            // Delete old image if exists
-            if ($song->cover_image && Storage::exists($song->cover_image)) {
-                Storage::delete($song->cover_image);
+            $file = $request->file('cover_image');
+        
+            if ($file->isValid()) {
+                $path = $file->store('public/covers');
+                logger("✅ File berhasil di-upload ke: $path");
+                $song->cover_image = $path;
+            } else {
+                logger("❌ Upload error: " . $file->getErrorMessage());
             }
-
-            $path = $request->file('cover_image')->store('public/covers');
-            $song->cover_image = $path;
+        } else {
+            logger("❌ Tidak ada file cover_image dikirim");
         }
-        dump($song->cover_image);
-        dump($request->file('cover_image'));
-        dump('public/covers');
+        
 
 
         $song->save();
